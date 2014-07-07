@@ -28,9 +28,13 @@ int main(int argc, char** argv) {
             cout << "4 for Problem 4" << endl;
             cout << "5 for Problem 6" << endl;
             cout << "6 for Problem 7" << endl;
+            cout << "7 for Problem 8" << endl;
+            cout << "8 for Problem 9" << endl;
+            cout << "9 for Problem 10" << endl;
+            cout << "10 for Problem 11" << endl;
             cin >> num;
             cin.ignore();
-        }while( num < 0 || num > 6);
+        }while( num < 0 || num > 10);
       //Problems for homework
         switch(num){
             case 1:
@@ -571,7 +575,7 @@ int main(int argc, char** argv) {
                    cin >> redo;
                 }
                 while (redo =='Y'||redo =='y'){
-                                    cout << "Enter the first number of the quadratic equation ";
+                cout << "Enter the first number of the quadratic equation ";
                 cin >> a;
                 cout << "Enter the Second number of the quadratic equation ";
                 cin >> b;
@@ -599,7 +603,39 @@ int main(int argc, char** argv) {
                 }
                 break;
             case 6:
-                cout << "Problem 10" << endl;
+                cout << "Problem 7" << endl;
+                //variables
+                int year; //year inputed
+                cout << "Input a year between 1000 and 3000: ";
+                cin >> year;
+                if (year >= 1000){
+                    cout << "M ";
+                    year = year - 1000;
+                    if (year >= 1000){
+                        cout << "M ";
+                        year = year - 1000;
+                    }
+                    else if (year >= 900) {
+                        cout << "CM ";
+                        year = year - 900;
+                    }
+                    else if (year >= 50){
+                    cout << "L ";
+                    year = year - 50;
+                }
+                }
+                break;
+            case 7:
+                cout << "This is problem";
+                break;
+            case 8:
+                cout << "This is problem";
+                break;
+            case 9:
+                cout << "This is problem";
+                break;
+            case 10:
+                cout << "This is problem";
                 break;
         }
     }while(num);
