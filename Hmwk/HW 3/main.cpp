@@ -6,6 +6,7 @@
 //System Libraries
 #include <iostream>
 #include <string>
+#include <cmath>
 using namespace std;
 
 //User Libraries
@@ -24,9 +25,9 @@ int main(int argc, char** argv) {
             cout << "1 for Problem 1" << endl;
             cout << "2 for Problem 2" << endl;
             cout << "3 for Problem 3" << endl;
-            cout << "4 for Problem 4" << endl;
-            cout << "5 for Problem 5" << endl;
-            cout << "6 for Problem 6" << endl;
+            cout << "4 for Problem 6" << endl;
+            cout << "5 for Problem 8" << endl;
+            cout << "6 for Problem 10" << endl;
             cin >> num;
             cin.ignore();
         }while( num < 0 || num > 6);
@@ -193,9 +194,9 @@ int main(int argc, char** argv) {
                         cout << "Input the balance of the account: ";
                         cin >> Balance;
                 if (Balance > 1000){
-                    nBal = 1000 * .015;//calculation for interest first 1000
+                    nBal = 1000 * 1.5e-2;//calculation for interest first 1000
                     cBal = Balance - 1000;
-                    nAmont = cBal *.1;
+                    nAmont = cBal *1.0e-1;
                     iRate = 2.5;               
                     tAmont = nBal + nAmont + Balance;
                     cout << "The total interest due is " << iRate << endl;
@@ -216,15 +217,117 @@ int main(int argc, char** argv) {
                 break;
             case 3:
                 cout << "Problem 3" << endl;
+                //variables
+                short mon; //months
+                short day; //days of the year
+                cout << "Input the month you were born in numbers: December = 12 ";
+                cin >> mon;
+                cout << "Input the day of the month you were born:";
+                cin >> day;
+                if (mon == 12 &&  day > 22 || mon == 1 && day < 19){
+                    cout << "You are a Capricorn.";
+                }
+                else if (mon == 2 && day > 22 ||mon == 3 && day < 17 ){
+                    cout << "You are a Pisces.";
+                }
+                else if (mon == 1 && day > 20 || mon == 2 && day < 18 ){
+                    cout << "You are a Aquarius.";
+                }
+                else if (mon == 3 && day > 21 || mon == 4 && day < 19  ){
+                    cout << "You are a Aries.";
+                }
+                else if (mon == 4 && day > 20 ||mon == 5 && day < 20 ){
+                    cout << "You are a Taurus.";
+                }
+                else if (mon == 5 && day > 21 ||mon == 6 && day < 21 ){
+                    cout << "You are a Gemini.";
+                }
+                else if (mon == 6 && day > 22 ||mon == 7 && day < 22 ){
+                    cout << "You are a Cancer.";
+                }
+                else if (mon == 7 && day > 23 ||mon == 8 && day < 23 ){
+                    cout << "You are a Leo.";
+                }
+                else if (mon == 8 && day > 23 ||mon == 9 && day < 22 ){
+                    cout << "You are a Virgo.";
+                }
+                else if (mon == 9 && day > 23 ||mon == 10 && day < 22 ){
+                    cout << "You are a Libra.";
+                }
+                else if (mon == 10 && day > 23 ||mon == 11 && day < 21 ){
+                    cout << "You are a Scorpio.";
+                }
+                else if (mon == 11 && day > 22 ||mon == 12 && day < 21 ){
+                    cout << "You are a Sagittarius.";
+                }
+                else {
+                    cout << "You entered a invalid number.";
+                }
                 break;
             case 4:
-                cout << "Problem 4" << endl;
+                cout << "Problem 6" << endl;
+                //variables
+                int a,b,c; //inputs
+                float root1, root2; //outputs
+                char redo; //retry variable
+                cout << "Enter the first number of the quadratic equation ";
+                cin >> a;
+                cout << "Enter the Second number of the quadratic equation ";
+                cin >> b;
+                cout << "Enter the third number of the quadratic equation ";
+                cin >> c;
+                if (b * b - (4 * a * c) > 0){
+                   root1 = (-b + sqrt(b * b - (4 * a * c)))/(2*a);
+                   root2 = (-b - sqrt(b * b - (4 * a * c)))/(2*a);
+                   cout << "The first root is " << root1 << endl;
+                   cout << "The second root is " << root2 << endl;
+                   cout << "Redo? Y/N";
+                   cin >> redo;
+                }
+                else if (b * b - (4 * a * c) < 0){
+                   cout << "The Problem has two complex roots." << endl;
+                   cout << "Redo? Y/N";
+                   cin >> redo;
+                }
+                else {
+                   root1 = (-b + sqrt(b * b - (4 * a * c)))/(2*a);
+                   cout << "The only root is " << root1 << endl;
+                   cout << "Redo? Y/N";
+                   cin >> redo;
+                }
+                while (redo =='Y'||redo =='y'){
+                                    cout << "Enter the first number of the quadratic equation ";
+                cin >> a;
+                cout << "Enter the Second number of the quadratic equation ";
+                cin >> b;
+                cout << "Enter the third number of the quadratic equation ";
+                cin >> c;
+                if (b * b - (4 * a * c) > 0){
+                   root1 = (-b + sqrt(b * b - (4 * a * c)))/(2*a);
+                   root2 = (-b - sqrt(b * b - (4 * a * c)))/(2*a);
+                   cout << "The first root is " << root1 << endl;
+                   cout << "The second root is " << root2 << endl;
+                   cout << "Redo? Y/N";
+                   cin >> redo;
+                }
+                else if (b * b - (4 * a * c) < 0){
+                   cout << "The Problem has two complex roots." << endl;
+                   cout << "Redo? Y/N";
+                   cin >> redo;
+                }
+                else {
+                   root1 = (-b + sqrt(b * b - (4 * a * c)))/(2*a);
+                   cout << "The only root is " << root1 << endl;
+                   cout << "Redo? Y/N";
+                   cin >> redo;
+                }
+                }
                 break;
             case 5:
-                cout << "Problem 5" << endl;
+                cout << "Problem 8" << endl;
                 break;
             case 6:
-                cout << "Problem 6" << endl;
+                cout << "Problem 10" << endl;
                 break;
         }
     }while(num);
