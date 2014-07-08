@@ -32,7 +32,7 @@ int main(int argc, char** argv) {
             cout << "7 for Problem 10" << endl;
             cout << "8 for Problem 12" << endl;
             cout << "9 for Problem 15" << endl;
-            cout << "10 for Problem 11" << endl;
+            cout << "10 for Problem 16" << endl;
             cin >> num;
             cin.ignore();
         }while( num < 0 || num > 10);
@@ -731,14 +731,12 @@ int main(int argc, char** argv) {
                 if (buoyF >= weight){
                     cout << "Your object floats and has a buoyancy of " << buoyF
                          << "compared to the weight of " << weight << endl;
-                    cout << vol;
                     cout << "Retry? Y/N ";
                     cin >> redo;    
                 }
                 else {
                     cout << "Your object sinks and has a buoyancy of " << buoyF
                          << "compared to the weight of " << weight << endl;
-                    cout << vol;
                     cout << "Retry? Y/N ";
                     cin >> redo;
                 }
@@ -752,21 +750,31 @@ int main(int argc, char** argv) {
                 if (buoyF >= weight){
                     cout << "Your object floats and has a buoyancy of " << buoyF
                          << "compared to the weight of " << weight << endl;
-                    cout << vol;
                     cout << "Retry? Y/N ";
                     cin >> redo;    
                 }
                 else {
                     cout << "Your object sinks and has a buoyancy of " << buoyF
                          << "compared to the weight of " << weight << endl;
-                    cout << vol;
                     cout << "Retry? Y/N ";
                     cin >> redo;
                 }
                  }
                 break;
             case 10:
-                cout << "This is problem";
+                cout << "This is problem 16" << endl;
+                //variables
+                int tempC; //temp in Fahrenheit
+                int tempF; //temp in Celsius
+                cout << "Enter the temperature in Celsius below 100: ";
+                cin >> tempC;
+                while (tempC < 100){
+                    tempF = (9*tempC)/5 + 32;
+                    if (tempF == tempC){
+                        cout << tempF << "   " << tempC << endl;
+                    }
+                    tempC = tempC + 1;
+                }
                 break;
         }
     }while(num);
