@@ -28,7 +28,7 @@ int main(int argc, char** argv) {
             cout << "3 for Problem 3" << endl;
             cout << "4 for Problem 4" << endl;
             cout << "5 for Problem 6" << endl;
-            cout << "6 for Problem 7" << endl;
+            cout << "6 for Problem 17" << endl;
             cout << "7 for Problem 10" << endl;
             cout << "8 for Problem 12" << endl;
             cout << "9 for Problem 15" << endl;
