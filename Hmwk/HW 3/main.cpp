@@ -606,27 +606,82 @@ int main(int argc, char** argv) {
                 }
                 break;
             case 6:
-                cout << "Problem 7" << endl;
+                cout << "Problem 17" << endl;
                 //variables
-                int year; //year inputed
-                cout << "Input a year between 1000 and 3000: ";
-                cin >> year;
-                if (year >= 1000){
-                    cout << "M ";
-                    year = year - 1000;
-                    if (year >= 1000){
-                        cout << "M ";
-                        year = year - 1000;
-                    }
-                    else if (year >= 900) {
-                        cout << "CM ";
-                        year = year - 900;
-                    }
-                    else if (year >= 50){
-                    cout << "L ";
-                    year = year - 50;
+                unsigned short lbs; //weight of person
+                unsigned short height; // height of person
+                unsigned short age; //person's age
+                float BMR; //basic metabolism rate
+                char sex; //person's sex
+                float nChobar; //number of chocolate bars
+                char Sed; //sedentary
+                char sAct; //somewhat active
+                char act; //active
+                char hAct; //Highly active
+                //inputs of the variables
+                cout << "Enter your Height in inches: ";
+                cin >> height;
+                cout << "Enter your weight in lbs: ";
+                cin >> lbs;
+                cout << "Enter your age: ";
+                cin >> age;
+                cout << "Enter your sex : M/F ";
+                cin >> sex;
+                cout << "Enter whether you are sedentary: y/n ";
+                cin >> Sed;
+                cout << "Enter whether you are somewhat active: y/n  ";
+                cin >> sAct;
+                cout << "Enter whether you are active: 3-4 times a week y/n   ";
+                cin >> act;
+                cout << "Enter whether you are highly active: y/n  ";
+                cin >> hAct;
+                //formulas for each sex
+                if (sex == 'M' || sex == 'm') {
+                    BMR = (66 + (6.3 * lbs) + (12.9 * height) - (6.8 * age));
+                    nChobar = BMR / 230;
+                } else if (sex == 'F' || sex == 'f') {
+                    BMR = (655 + (4.3 * lbs) + (4.7 * height) - (4.7 * age));
+                    nChobar = BMR / 230;
+                } else {
+                    cout << "You did not enter a valid character." << endl;
                 }
+                if ((sex == 'M' || sex == 'm') && (Sed == 'Y'||Sed =='y')) {
+                    BMR = 1.2 * ((66 + (6.3 * lbs) + (12.9 * height) - (6.8 * age)));
+                    nChobar = BMR / 230;
+                } else if ((sex == 'F' || sex == 'f') && (Sed == 'Y'||Sed =='y')) {
+                    BMR = 1.2 * ((655 + (4.3 * lbs) + (4.7 * height) - (4.7 * age)));
+                    nChobar = BMR / 230;
+                }               
+                if ((sex == 'M' || sex == 'm') && (sAct == 'Y' ||sAct == 'y')) {
+                    BMR = 1.3 * ((66 + (6.3 * lbs) + (12.9 * height) - (6.8 * age)));
+                    nChobar = BMR / 230;
+                } else if ((sex == 'F' || sex == 'f') && (sAct == 'Y'||sAct =='y')) {
+                    BMR = 1.3 * ((655 + (4.3 * lbs) + (4.7 * height) - (4.7 * age)));
+                    nChobar = BMR / 230;
                 }
+                if ((sex == 'M' || sex == 'm') && (act == 'Y'||act == 'y')) {
+                    BMR = 1.4 * ((66 + (6.3 * lbs) + (12.9 * height) - (6.8 * age)));
+                    nChobar = BMR / 230;
+                } else if ((sex == 'F' || sex == 'f') && (act == 'Y'||act == 'y')) {
+                    BMR = 1.4 * ((655 + (4.3 * lbs) + (4.7 * height) - (4.7 * age)));
+                    nChobar = BMR / 230;
+                } else {
+                    cout << "You did not enter a valid character." << endl;
+                }
+                if ((sex == 'M' || sex == 'm') && (hAct == 'Y'||hAct == 'y')) {
+                    BMR = 1.5 * ((66 + (6.3 * lbs) + (12.9 * height) - (6.8 * age)));
+                    nChobar = BMR / 230;
+                } else if ((sex == 'F' || sex == 'f') && (hAct == 'Y'||hAct == 'y')) {
+                    BMR = 1.5 * ((655 + (4.3 * lbs) + (4.7 * height) - (4.7 * age)));
+                    nChobar = BMR / 230;
+                } else {
+                    cout << "You did not enter a valid character." << endl;
+                }
+                //output
+                cout << "Your BMR is " << BMR << endl;
+                cout << "The number if candy bars you need to eat to maintain your height is ";
+                cout << nChobar;
+                return 0;
                 break;
             case 7:
                 cout << "This is problem 10" << endl;
