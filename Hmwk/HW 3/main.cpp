@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <math.h>
 using namespace std;
 
 //User Libraries
@@ -28,9 +29,9 @@ int main(int argc, char** argv) {
             cout << "4 for Problem 4" << endl;
             cout << "5 for Problem 6" << endl;
             cout << "6 for Problem 7" << endl;
-            cout << "7 for Problem 8" << endl;
-            cout << "8 for Problem 9" << endl;
-            cout << "9 for Problem 10" << endl;
+            cout << "7 for Problem 10" << endl;
+            cout << "8 for Problem 12" << endl;
+            cout << "9 for Problem 15" << endl;
             cout << "10 for Problem 11" << endl;
             cin >> num;
             cin.ignore();
@@ -234,67 +235,67 @@ int main(int argc, char** argv) {
                 //calculating the horoscope
                 if (month == 12 &&  days > 22 || month == 1 && days < 19){
                     cout << "You are a Capricorn.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (month == 2 && days > 22 ||month == 3 && days < 17 ){
                     cout << "You are a Pisces.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (month == 1 && days > 20 || month == 2 && days < 18 ){
                     cout << "You are a Aquarius.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (month == 3 && days > 21 || month == 4 && days < 19  ){
                     cout << "You are a Aries.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (month == 4 && days > 20 ||month == 5 && days < 20 ){
                     cout << "You are a Taurus.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (month == 5 && days > 21 ||month == 6 && days < 21 ){
                     cout << "You are a Gemini.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (month == 6 && days > 22 ||month == 7 && days < 22 ){
                     cout << "You are a Cancer.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (month == 7 && days > 23 ||month == 8 && days < 23 ){
                     cout << "You are a Leo.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (month == 8 && days > 23 ||month == 9 && days < 22 ){
                     cout << "You are a Virgo.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (month == 9 && days > 23 ||month == 10 && days < 22 ){
                     cout << "You are a Libra.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (month == 10 && days > 23 ||month == 11 && days < 21 ){
                     cout << "You are a Scorpio.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (month == 11 && days > 22 ||month == 12 && days < 21 ){
                     cout << "You are a Sagittarius.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else {
                     cout << "You entered a invalid number.";\
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 
@@ -307,67 +308,67 @@ int main(int argc, char** argv) {
                 //calculating the horoscope
                 if (month == 12 &&  days > 22 || month == 1 && days < 19){
                     cout << "You are a Capricorn.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (month == 2 && days > 22 ||month == 3 && days < 17 ){
                     cout << "You are a Pisces.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (month == 1 && days > 20 || month == 2 && days < 18 ){
                     cout << "You are a Aquarius.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (month == 3 && days > 21 || month == 4 && days < 19  ){
                     cout << "You are a Aries.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (month == 4 && days > 20 ||month == 5 && days < 20 ){
                     cout << "You are a Taurus.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (month == 5 && days > 21 ||month == 6 && days < 21 ){
                     cout << "You are a Gemini.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (month == 6 && days > 22 ||month == 7 && days < 22 ){
                     cout << "You are a Cancer.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (month == 7 && days > 23 ||month == 8 && days < 23 ){
                     cout << "You are a Leo.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (month == 8 && days > 23 ||month == 9 && days < 22 ){
                     cout << "You are a Virgo.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (month == 9 && days > 23 ||month == 10 && days < 22 ){
                     cout << "You are a Libra.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (month == 10 && days > 23 ||month == 11 && days < 21 ){
                     cout << "You are a Scorpio.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (month == 11 && days > 22 ||month == 12 && days < 21 ){
                     cout << "You are a Sagittarius.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else {
                     cout << "You entered a invalid number.";\
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }               
                 }
@@ -385,77 +386,78 @@ int main(int argc, char** argv) {
                 if (mon == 12 &&  day > 22 || mon == 1 && day < 19){
                     cout << "You are a Capricorn. ";
                     cout << "You are compatible with Taurus and Virgo.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (mon == 2 && day > 22 ||mon == 3 && day < 17 ){
                     cout << "You are a Pisces. ";
                     cout << "You are compatible with Cancer and Scorpio.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (mon == 1 && day > 20 || mon == 2 && day < 18 ){
                     cout << "You are a Aquarius. ";
                     cout << "You are compatible with Gemini and Libra.";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (mon == 3 && day > 21 || mon == 4 && day < 19  ){
                     cout << "You are a Aries. ";
                     cout << "You are compatible with Sagittarius and Leo.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (mon == 4 && day > 20 ||mon == 5 && day < 20 ){
                     cout << "You are a Taurus. ";
                     cout << "You are compatible with Virgo and Capricorn.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (mon == 5 && day > 21 ||mon == 6 && day < 21 ){
                     cout << "You are a Gemini. ";
                     cout << "You are compatible with Libra Aquarius.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (mon == 6 && day > 22 ||mon == 7 && day < 22 ){
                     cout << "You are a Cancer. ";
                     cout << "You are compatible with Scorpio and Pisces.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (mon == 7 && day > 23 ||mon == 8 && day < 23 ){
                     cout << "You are a Leo. ";
                     cout << "You are compatible with Aries and Sagittarius.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (mon == 8 && day > 23 ||mon == 9 && day < 22 ){
                     cout << "You are a Virgo. ";
                     cout << "You are compatible with Taurus and Capricorn.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (mon == 9 && day > 23 ||mon == 10 && day < 22 ){
                     cout << "You are a Libra. ";
                     cout << "You are compatible with Gemini and Aquarius.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (mon == 10 && day > 23 ||mon == 11 && day < 21 ){
                     cout << "You are a Scorpio. ";
                     cout << "You are compatible with Cancer and Pisces.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (mon == 11 && day > 22 ||mon == 12 && day < 21 ){
                     cout << "You are a Sagittarius. ";
                     cout << "You are compatible with Aries and Leo.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else {
                     cout << "You entered a invalid number.";\
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }           
                 //redo loop
@@ -468,77 +470,78 @@ int main(int argc, char** argv) {
                 if (mon == 12 &&  day > 22 || mon == 1 && day < 19){
                     cout << "You are a Capricorn. ";
                     cout << "You are compatible with Taurus and Virgo.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (mon == 2 && day > 22 ||mon == 3 && day < 17 ){
                     cout << "You are a Pisces. ";
                     cout << "You are compatible with Cancer and Scorpio.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (mon == 1 && day > 20 || mon == 2 && day < 18 ){
                     cout << "You are a Aquarius. ";
                     cout << "You are compatible with Gemini and Libra.";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (mon == 3 && day > 21 || mon == 4 && day < 19  ){
                     cout << "You are a Aries. ";
                     cout << "You are compatible with Sagittarius and Leo.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (mon == 4 && day > 20 ||mon == 5 && day < 20 ){
                     cout << "You are a Taurus. ";
                     cout << "You are compatible with Virgo and Capricorn.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (mon == 5 && day > 21 ||mon == 6 && day < 21 ){
                     cout << "You are a Gemini. ";
                     cout << "You are compatible with Libra Aquarius.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (mon == 6 && day > 22 ||mon == 7 && day < 22 ){
                     cout << "You are a Cancer. ";
                     cout << "You are compatible with Scorpio and Pisces.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (mon == 7 && day > 23 ||mon == 8 && day < 23 ){
                     cout << "You are a Leo. ";
                     cout << "You are compatible with Aries and Sagittarius.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (mon == 8 && day > 23 ||mon == 9 && day < 22 ){
                     cout << "You are a Virgo. ";
                     cout << "You are compatible with Taurus and Capricorn.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (mon == 9 && day > 23 ||mon == 10 && day < 22 ){
                     cout << "You are a Libra. ";
                     cout << "You are compatible with Gemini and Aquarius.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (mon == 10 && day > 23 ||mon == 11 && day < 21 ){
                     cout << "You are a Scorpio. ";
                     cout << "You are compatible with Cancer and Pisces.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else if (mon == 11 && day > 22 ||mon == 12 && day < 21 ){
                     cout << "You are a Sagittarius. ";
                     cout << "You are compatible with Aries and Leo.";
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 else {
                     cout << "You entered a invalid number.";\
-                    cout << "Redo? Y/N";
+                    cout << "Redo? Y/N ";
                     cin >> redone;
                 }
                 }
@@ -560,7 +563,7 @@ int main(int argc, char** argv) {
                    root2 = (-b - sqrt(b * b - (4 * a * c)))/(2*a);
                    cout << "The first root is " << root1 << endl;
                    cout << "The second root is " << root2 << endl;
-                   cout << "Redo? Y/N";
+                   cout << "Redo? Y/N ";
                    cin >> redo;
                 }
                 else if (b * b - (4 * a * c) < 0){
@@ -571,7 +574,7 @@ int main(int argc, char** argv) {
                 else {
                    root1 = (-b + sqrt(b * b - (4 * a * c)))/(2*a);
                    cout << "The only root is " << root1 << endl;
-                   cout << "Redo? Y/N";
+                   cout << "Redo? Y/N ";
                    cin >> redo;
                 }
                 while (redo =='Y'||redo =='y'){
@@ -586,18 +589,18 @@ int main(int argc, char** argv) {
                    root2 = (-b - sqrt(b * b - (4 * a * c)))/(2*a);
                    cout << "The first root is " << root1 << endl;
                    cout << "The second root is " << root2 << endl;
-                   cout << "Redo? Y/N";
+                   cout << "Redo? Y/N ";
                    cin >> redo;
                 }
                 else if (b * b - (4 * a * c) < 0){
                    cout << "The Problem has two complex roots." << endl;
-                   cout << "Redo? Y/N";
+                   cout << "Redo? Y/N ";
                    cin >> redo;
                 }
                 else {
                    root1 = (-b + sqrt(b * b - (4 * a * c)))/(2*a);
                    cout << "The only root is " << root1 << endl;
-                   cout << "Redo? Y/N";
+                   cout << "Redo? Y/N ";
                    cin >> redo;
                 }
                 }
@@ -626,13 +629,141 @@ int main(int argc, char** argv) {
                 }
                 break;
             case 7:
-                cout << "This is problem";
+                cout << "This is problem 10" << endl;
+                //variables
+                int size; // size of population in lbs
+                short nSize; //new size for each period
+                short eDays; // periods of growth
+                short cDays; // change in periods
+                int cSize; //change in size
+                //inputs
+                cout << "Enter the initial population size in lbs: ";
+                cin >> size;
+                cout << "Enter the number of days of growth: ";
+                cin >> days;
+                eDays = days/5;
+                nSize = 0;
+                cDays = 0;
+                cSize = size;
+                cout << size << " ";
+                while (eDays > cDays){
+                nSize = nSize + cSize;
+                cSize = nSize;
+                cDays = cDays + 1;
+                cout << nSize << " " << endl;
+                }
+                cout << "Retry? Y/N ";
+                cin >> redo;
+                while(redo == 'y' || redo == 'Y'){
+                    cout << "Enter the initial population size in lbs: ";
+                    cin >> size;
+                    cout << "Enter the number of days of growth: ";
+                    cin >> days;
+                    eDays = days/5;
+                    nSize = 0;
+                    cDays = 0;
+                    cSize = size;
+                    cout << size << " " << endl;
+                    while (eDays > cDays){
+                        nSize = nSize + cSize;
+                        cSize = nSize;
+                        cDays = cDays + 1;
+                        cout << nSize << " " << endl;
+                        }
+                        cout << "Retry? Y/N ";
+                        cin >> redo;    
+                }
                 break;
             case 8:
-                cout << "This is problem";
+                cout << "This is problem 12" << endl;
+                //variables
+                int nPow; //N power
+                int cPow; //change in power
+                int g; //g is temp variable for 2n+1
+                float frac, aFrac; //fraction amount in addition
+                float Pie; //pi value
+                cout << "Enter the n value for our approximation: Whole numbers only ";
+                cin >> nPow;
+                cPow = 0;
+                aFrac = 0;
+                while (nPow > cPow){
+                    g = 2 * cPow + 1;
+                    frac = pow(-1,cPow)/g;
+                    aFrac = aFrac + frac;
+                    cout << frac << endl;
+                    cPow = cPow + 1;
+                }
+                Pie = 4 * aFrac;
+                cout << "The approximate value of pi is " << Pie << endl;
+                cout << "Retry? Y/N ";
+                cin >> redo;
+                while(redo == 'y' || redo == 'Y'){
+                    cout << "Enter the n value for our approximation: Whole numbers only ";
+                    cin >> nPow;
+                    cPow = 0;
+                    aFrac = 0;
+                while (nPow > cPow){
+                    g = 2 * cPow + 1;
+                    frac = pow(-1,cPow)/g;
+                    aFrac = aFrac + frac;
+                    cout << frac << endl;
+                    cPow = cPow + 1;
+                }
+                Pie = 4 * aFrac;
+                cout << "The approximate value of pi is " << Pie << endl;
+                cout << "Retry? Y/N ";
+                cin >> redo;    
+                }
                 break;
             case 9:
-                cout << "This is problem";
+                cout << "This is problem 15" << endl;
+                //variables
+                float weight; //weight in lbs
+                float rad; //radius in sphere
+                float buoyF; // bouyancy force
+                float vol; //Volume of sphere
+                cout << "Enter the weight in lbs of the object: ";
+                cin >> weight;
+                cout << "Enter the radius of the object: ";
+                cin >> rad;
+                vol = (4/3) * M_PI * (rad * rad * rad);
+                buoyF = vol * 62.4;
+                if (buoyF >= weight){
+                    cout << "Your object floats and has a buoyancy of " << buoyF
+                         << "compared to the weight of " << weight << endl;
+                    cout << vol;
+                    cout << "Retry? Y/N ";
+                    cin >> redo;    
+                }
+                else {
+                    cout << "Your object sinks and has a buoyancy of " << buoyF
+                         << "compared to the weight of " << weight << endl;
+                    cout << vol;
+                    cout << "Retry? Y/N ";
+                    cin >> redo;
+                }
+                 if(redo == 'y' || redo == 'Y'){
+                    cout << "Enter the weight in lbs of the object: ";
+                    cin >> weight;
+                    cout << "Enter the radius of the object: ";
+                    cin >> rad;
+                    vol = (4/3) * M_PI * (rad * rad * rad);
+                    buoyF = vol * 62.4;
+                if (buoyF >= weight){
+                    cout << "Your object floats and has a buoyancy of " << buoyF
+                         << "compared to the weight of " << weight << endl;
+                    cout << vol;
+                    cout << "Retry? Y/N ";
+                    cin >> redo;    
+                }
+                else {
+                    cout << "Your object sinks and has a buoyancy of " << buoyF
+                         << "compared to the weight of " << weight << endl;
+                    cout << vol;
+                    cout << "Retry? Y/N ";
+                    cin >> redo;
+                }
+                 }
                 break;
             case 10:
                 cout << "This is problem";
