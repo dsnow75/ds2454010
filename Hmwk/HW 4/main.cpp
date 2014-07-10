@@ -27,10 +27,10 @@ int main(int argc, char** argv) {
             cout << "2 for Problem 2" << endl;
             cout << "3 for Problem 3" << endl;
             cout << "4 for Problem 4" << endl;
-            cout << "5 for Problem 6" << endl;
-            cout << "6 for Problem 9" << endl;
-            cout << "7 for Problem 10" << endl;
-            cout << "8 for Problem 12" << endl;
+            cout << "5 for Problem 5" << endl;
+            cout << "6 for Problem 7" << endl;
+            cout << "7 for Problem 9" << endl;
+            cout << "8 for Problem 10" << endl;
             cout << "9 for Problem 15" << endl;
             cout << "10 for Problem 16" << endl;
             cin >> num;
@@ -120,15 +120,81 @@ int main(int argc, char** argv) {
             case 4:
                 cout << "Problem 4" << endl;
                 //variables
-
+                float price1; //price of the item present day
+                float price2; //price of the item one year ago
+                float per; //percent of inflation
+                float inRate; //inflation rate
+                char redon; //retry variable
+                do{
+                    cout << "Enter the price of the item today: ";
+                    cin >> price1;
+                    cout << "Enter the price of the item one year ago: ";
+                    cin >> price2;
+                    inRate = (price1 - price2)/price2;
+                    per = inRate*100;
+                    cout << "The inflation rate in percent is " << per << "%.";
+                    cout << "Redo? Y/N ";
+                    cin >> redon;
+                }while (redon == 'y' || redon == 'Y');
                 break;
             case 5:
-                cout << "Problem 6" << endl;
+                cout << "Problem 5" << endl;
                 //variables
-
+                float amnt1; //price of the item present day
+                float amnt2; //price of the item one year ago
+                float perc; //percent of inflation
+                float inRat; //inflation rate
+                float nPrice; //new price in one year
+                float nPrice2; //new price in two years
+                char rDon; //retry variable
+                do{
+                    cout << "Enter the price of the item today: ";
+                    cin >> amnt1;
+                    cout << "Enter the price of the item one year ago: ";
+                    cin >> amnt2;
+                    inRat = (amnt1 - amnt2)/amnt2;
+                    perc = inRat*100;
+                    nPrice = (inRat * amnt1) + amnt1;
+                    nPrice2 = 2 * (inRat * amnt1) + amnt1;
+                    cout << inRat << endl;
+                    cout << "The inflation rate in percent is " << perc << "%.";
+                    cout << "The price is going to be " << nPrice << " in 1 year.";
+                    cout << " The price is going to be " << nPrice2 << " in 2 year.";
+                    cout << "Redo? Y/N ";
+                    cin >> rDon;
+                }while (rDon == 'y' || rDon == 'Y');
+                break;
                 break;
             case 6:
-                cout << "Problem 9" << endl;
+                cout << "Problem 7" << endl;
+                //variables
+                float force; //force generated
+                float mass1; //mass of first object
+                float mass2; //mass of the second object
+                float dis; //distance between objects
+                float g; //gravitational constant
+                char retry; //retry variable
+                do{
+                    //inputs
+                    cout << "Input the mass of the first object in grams: ";
+                    cin >> mass1;
+                    cout << "Input the mass of the second object in grams: ";
+                    cin >> mass2;
+                    cout << "Input the distance between the two objects in cm: ";
+                    cin >> dis;
+                    //constant and calculations
+                    g = 6.673e-8;
+                    force = (g * mass1 * mass2)/(dis * dis);
+                    //output
+                    cout << "The gravitational force between the two objects are "
+                         << force << "(g * cm)/(sec^2)" << endl;
+                    //retry
+                    cout << "Redo? Y/N ";
+                    cin >> retry;
+                }while (retry == 'y' || retry == 'Y');
+                break;
+            case 7:
+                cout << "This is problem 9" << endl;
                 //variables
                 float hSize; //hat size
                 float jSize; //jacket size
@@ -160,7 +226,7 @@ int main(int argc, char** argv) {
                         cin >> redone;
                 }while (redone == 'y' || redone == 'Y');
                 break;
-            case 7:
+            case 8:
                 cout << "This is problem 10" << endl;
                 //new variables from problem 9
                 float nJsize; //new jacket size after 10 years
@@ -202,11 +268,6 @@ int main(int argc, char** argv) {
                         cout << "Redo? Y/N ";
                         cin >> reDos;
                 }while (reDos == 'y' || reDos == 'Y');
-                break;
-            case 8:
-                cout << "This is problem 12" << endl;
-                //variables
-
                 break;
             case 9:
                 cout << "This is problem 15" << endl;
