@@ -305,9 +305,22 @@ int main(int argc, char** argv) {
             case 10:
                 cout << "This is problem 16" << endl;
                 //variables
-
-                break;
-        }
+                float cost; //price of house
+                float downPay; //down payment
+                float annMort; //annual mortgage
+                float taxSav; //tax savings
+                float inLoBal; //initial loan balance
+                float LoanP; //loan principle
+                char ReDos; //retry variable
+                do{
+                    cout << "Enter the price of the house: ";
+                    cin >> cost;
+                    cout << "Enter the down payment of the house: ";
+                    cin >> downPay;
+                    
+                    annMort = .03 * inLoBal + .06 * inLoBal;
+                }while (ReDos == 'y' || ReDos == 'Y');
+            }
     }while(num);
   //End of program
     return 0;
