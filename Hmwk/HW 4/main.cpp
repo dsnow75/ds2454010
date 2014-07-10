@@ -41,12 +41,53 @@ int main(int argc, char** argv) {
             case 1:
                 cout << "Problem 1" << endl;
                 //problem variables
-                
+                unsigned int miles; //miles traveled
+                float litGas; //liters of gas
+                float mpg; //miles per galleon
+                char redo; //rerun the program
+                do{
+                cout << "Input the number of miles the car has been driven: ";
+                cin >> miles;
+                cout << "Input the liters of gas that the car consumed: ";
+                cin >> litGas;
+                mpg = miles/(litGas * .264179);
+                cout << "Your car runs " << mpg << " miles per galleon.";
+                cout << "Redo? Y/N ";
+                cin >> redo;
+                }while (redo == 'y' || redo == 'Y');
                 break;
             case 2:
                 cout << "Problem 2" << endl;
-                //variables
-
+                //new variables and variables from problem 1
+                int mile2; //miles for second car
+                float litGas2; //litGas for second car
+                float mpg2; //miles per galleon second car
+                do{
+                cout << "Input the number of miles the car has been driven: ";
+                cin >> miles;
+                cout << "Input the liters of gas that the car consumed: ";
+                cin >> litGas;
+                cout << "Input the number of miles the car has been driven: ";
+                cin >> mile2;
+                cout << "Input the liters of gas that the car consumed: ";
+                cin >> litGas2;
+                mpg = miles/(litGas * .264179);
+                mpg2 = mile2/(litGas2 * .264179);
+                cout << "Your car runs " << mpg << " miles per galleon." << endl;
+                cout << "The second car runs " << mpg2 << " miles per galleon."
+                        << endl;
+                if (mpg > mpg2){
+                    cout << "Car 1 is the most efficient.";
+                }
+                else if (mpg < mpg2){
+                    cout << "Car 2 is the most efficient.";
+                }
+                else{
+                    cout << "The cars are the same in efficiency.";
+                }
+                cout << "Redo? Y/N ";
+                cin >> redo;
+                }while (redo == 'y' || redo == 'Y');
                 break;
             case 3:
                 cout << "Problem 3" << endl;
