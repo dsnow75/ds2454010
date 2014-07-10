@@ -28,7 +28,7 @@ int main(int argc, char** argv) {
             cout << "3 for Problem 3" << endl;
             cout << "4 for Problem 4" << endl;
             cout << "5 for Problem 6" << endl;
-            cout << "6 for Problem 17" << endl;
+            cout << "6 for Problem 9" << endl;
             cout << "7 for Problem 10" << endl;
             cout << "8 for Problem 12" << endl;
             cout << "9 for Problem 15" << endl;
@@ -105,14 +105,77 @@ int main(int argc, char** argv) {
 
                 break;
             case 6:
-                cout << "Problem 17" << endl;
+                cout << "Problem 9" << endl;
                 //variables
-
+                float hSize; //hat size
+                float jSize; //jacket size
+                float wSize; //waist size in inches
+                float uHt; //user height
+                float uWt; //user weight
+                unsigned int age; //user age
+                do{
+                cout << "Input your height in inches: ";
+                cin >> uHt;
+                cout << "Input your weight in lbs: ";
+                cin >> uWt;
+                cout << "Input your age: ";
+                cin >> age;
+                hSize = (uWt/uHt) * 2.9;
+                jSize = (uHt * uWt)/288;
+                if (age > 30){
+                   jSize += (1.0f/8) * ((age - 30)/10);
+                }
+                wSize = uWt/5.7;
+                if (age > 28){
+                   wSize += (1.0f/10) * ((age - 28)/2);
+                }
+                cout << "Your hat size is " << hSize << endl;
+                cout << "Your jacket size is " << jSize << endl;
+                cout << "Your waist size is " << wSize << endl;
+                cout << "Redo? Y/N ";
+                cin >> redo;
+                }while (redo == 'y' || redo == 'Y');
                 break;
             case 7:
                 cout << "This is problem 10" << endl;
-                //variables
-
+                //new variables from problem 9
+                float nJsize; //new jacket size after 10 years
+                float nWsize; //new waist size after 10 years
+                int nAge; //age after 10 years
+                do{
+                cout << "Input your height in inches: ";
+                cin >> uHt;
+                cout << "Input your weight in lbs: ";
+                cin >> uWt;
+                cout << "Input your age: ";
+                cin >> age;
+                hSize = (uWt/uHt) * 2.9;
+                jSize = (uHt * uWt)/288;
+                if (age > 30){
+                   jSize += (1.0f/8) * ((age - 30)/10);
+                }
+                wSize = uWt/5.7;
+                
+                if (age > 28){
+                   wSize += (1.0f/10) * ((age - 28)/2);
+                }
+                nWsize = uWt/5.7;
+                nJsize = (uHt * uWt)/288;
+                nAge = age + 10;
+                if (nAge > 30){
+                   nJsize += (1.0f/8) * ((nAge - 30)/10);
+                }
+                if (nAge > 28){
+                   nWsize += (1.0f/10) * ((nAge - 28)/2);
+                }
+                cout << "Your hat size is " << hSize << endl;
+                cout << "Your jacket size is " << jSize << endl;
+                cout << "Your waist size is " << wSize << endl;
+                cout << "Your new jacket size after 10 years is " << nJsize << endl;
+                cout << "Your new waist size after 10 years is " << nWsize << endl;
+                cout << "Redo? Y/N ";
+                cin >> redo;
+                }while (redo == 'y' || redo == 'Y');
                 break;
             case 8:
                 cout << "This is problem 12" << endl;
