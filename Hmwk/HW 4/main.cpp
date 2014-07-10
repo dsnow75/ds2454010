@@ -270,10 +270,37 @@ int main(int argc, char** argv) {
                 }while (reDos == 'y' || reDos == 'Y');
                 break;
             case 9:
-                cout << "This is problem 15" << endl;
+                cout << "This is problem 14" << endl;
                 //variables
-
-                 
+                int lbs; //weight of person
+                int inTen; //intensity of workout
+                int min; //minutes spent during workout
+                float totCal; //total calories
+                float favCal; //calories in favorite food
+                float serv; //how many serving of your favorite food
+                float bmr; //basic metabolism rate
+                float pa; //physical activity
+                float En; //energy to digest food
+                cout << "Input your weight in lbs: ";
+                cin >> lbs;
+                cout << "Input how intense your workout was: i.e. 17 for " <<
+                        "runninig 10 mph, 10 for 6 mph, 8 for basketball, 1" <<
+                        " for walking 1 mph" << endl;
+                cin >> inTen;
+                cout << "Input how long the workout was in minutes: ";
+                cin >> min;
+                cout << "Input the calories in one serving of your favorite food: ";
+                cin >> favCal;
+                bmr = 70 * pow((lbs /2.2),.756);
+                pa = .0385 * inTen * lbs * min;
+                cout << "The calories required for your basic metabolism rate is "
+                     << bmr <<endl;
+                cout << "The calories required for physical activity is " 
+                     << pa <<endl;
+                totCal = (bmr + pa)/.9;
+                serv = totCal/favCal;
+                cout << "The highest amount of serving of your favorite food "
+                        "you can have is " << serv;
                 break;
             case 10:
                 cout << "This is problem 16" << endl;
