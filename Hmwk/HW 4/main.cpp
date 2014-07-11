@@ -32,7 +32,7 @@ int main(int argc, char** argv) {
             cout << "7 for Problem 9" << endl;
             cout << "8 for Problem 10" << endl;
             cout << "9 for Problem 15" << endl;
-            cout << "10 for Problem 16" << endl;
+            cout << "10 for Problem 8" << endl;
             cin >> num;
             cin.ignore();
         }while( num < 0 || num > 10);
@@ -53,6 +53,7 @@ int main(int argc, char** argv) {
                 cin >> litGas;
                 //conversions
                 mpg = miles/(litGas * .264179);
+                //output
                 cout << "Your car runs " << mpg << " miles per galleon.";
                 cout << "Redo? Y/N ";
                 cin >> redo;
@@ -204,24 +205,29 @@ int main(int argc, char** argv) {
                 unsigned int age; //user age
                 char redone; //rerun the program
                 do{
+                        //inputs
                         cout << "Input your height in inches: ";
                         cin >> uHt;
                         cout << "Input your weight in lbs: ";
                         cin >> uWt;
                         cout << "Input your age: ";
                         cin >> age;
+                        //calculations
                         hSize = (uWt/uHt) * 2.9;
                         jSize = (uHt * uWt)/288;
+                        wSize = uWt/5.7;
+                        //if age over certain age group
                    if (age > 30){
                         jSize += (1.0f/8) * ((age - 30)/10);
-                   }
-                        wSize = uWt/5.7;
+                   }                      
                    if (age > 28){
                         wSize += (1.0f/10) * ((age - 28)/2);
                    }
+                        //output
                         cout << "Your hat size is " << hSize << endl;
                         cout << "Your jacket size is " << jSize << endl;
                         cout << "Your waist size is " << wSize << endl;
+                        //retry
                         cout << "Redo? Y/N ";
                         cin >> redone;
                 }while (redone == 'y' || redone == 'Y');
@@ -303,22 +309,25 @@ int main(int argc, char** argv) {
                         "you can have is " << serv;
                 break;
             case 10:
-                cout << "This is problem 16" << endl;
+                cout << "This is problem 8" << endl;
                 //variables
                 float cost; //price of house
                 float downPay; //down payment
                 float annMort; //annual mortgage
                 float taxSav; //tax savings
                 float inLoBal; //initial loan balance
-                float LoanP; //loan principle
                 char ReDos; //retry variable
                 do{
                     cout << "Enter the price of the house: ";
                     cin >> cost;
                     cout << "Enter the down payment of the house: ";
                     cin >> downPay;
-                    
-                    annMort = .03 * inLoBal + .06 * inLoBal;
+                    inLoBal = cost - downPay;
+                    taxSav = .06 * inLoBal * .35;
+                    annMort = .03 * inLoBal + taxSav;
+                    cout << "The annual cost is " << annMort << endl;
+                    cout << "Retry? Y/N ";
+                    cin >> ReDos;
                 }while (ReDos == 'y' || ReDos == 'Y');
             }
     }while(num);
