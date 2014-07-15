@@ -248,10 +248,41 @@ int main(int argc, char** argv) {
     void prob3()
     {
            cout << "Problem 3" << endl;
+           //variables
+           unsigned short pin; //pin number
+           unsigned short bal; //balance
+           unsigned short totDeb; //all debits
+           unsigned short totCre; //all credits
+           float debt; //debt
+           //outputs
+           cout << "Input a pin number (four integers only): ";
+           cin >> pin;
+           cout << "Input the balance initially placed on the card: ";
+           cin >> bal;
+           cout << "Input the total of all debits charged during the month: ";
+           cin >> totDeb;
+           cout << "Input the total of all added credits to the card: ";
+           cin >> totCre;
+           //calculating debt
+           debt = bal + totCre - totDeb;
+           //output
+           if (debt < 0){
+               debt = debt - 27.25;
+               cout << "You have overdrawn and an additional fee of $27.25 has "
+                       "been added." << endl;
+               cout << "Your debt is " << debt << "." << endl;
+               cout << "The card needs to be zeroed out for further charges."
+                    << endl;
+           }
+           else{
+               cout << "You have " << debt << " remaining on the card." << endl;
+           }
     }
     void prob4()
     {
            cout << "Problem 4" << endl;
+           //variables
+           
     }
     void prob5()
     {
