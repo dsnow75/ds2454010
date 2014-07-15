@@ -61,8 +61,7 @@ int main(int argc, char** argv) {
 	   cin>>inN;
            return inN;
     }
-    void prob1()
-    {
+    void prob1(){
         cout << "Problem 1" << endl;
          //variables
         short n; //number of lines
@@ -77,8 +76,7 @@ int main(int argc, char** argv) {
         }
             
     }
-    void prob2()
-    {
+    void prob2(){
         cout << "Problem 2" << endl;
         //variables
         char one, two, three, four; //inputs
@@ -245,8 +243,7 @@ int main(int argc, char** argv) {
             cout << "?" << endl;
         }
     }
-    void prob3()
-    {
+    void prob3(){
            cout << "Problem 3" << endl;
            //variables
            unsigned short pin; //pin number
@@ -278,21 +275,136 @@ int main(int argc, char** argv) {
                cout << "You have " << debt << " remaining on the card." << endl;
            }
     }
-    void prob4()
-    {
+    void prob4() {
            cout << "Problem 4" << endl;
            //variables
+           char pack; //which package
+           int hrs; //how many hours
+           int hrs2; //original hours stored for other use
+           float cost1; //cost of package 1
+           float cost2; //cost of package 2
+           float cost3; //cost of package 3
+           float hrsAft; //hours after cost for additional hours
+           //inputs
+           cout << "Input which package you are using:(a,b,c) ";
+           cin >> pack;
+           cout << "Input how many hours watched: ";
+           cin >> hrs;
+           hrs2 = hrs;
+           if (pack == 'A'||pack == 'a'){
+                hrs = hrs - 5;
+                if (hrs > 20){
+                    hrsAft = hrs - 20;
+                    cost1 = 19.95 + .75 * 20 + 1 * hrsAft;
+                }
+                else if (hrs > 0){
+                    cost1 = 19.95 + .75 * hrs;
+                }
+                else{
+                    cost1 = 19.95;
+                }
+                hrs2 = hrs2 - 15;
+                if (hrs2 > 25){
+                    hrsAft = hrs2 - 25;
+                    cost2 = 24.95 + .75 * 25 + .5 * hrsAft;
+                }
+                else if (hrs > 0){
+                    cost2 = 24.95 + .75 * hrs2;
+                }
+                else{
+                    cost2 = 24.95;
+                }
+                cout << "The package cost is " << cost1 << endl;
+                cost3 = 29.75;
+                if (cost1 > cost2 && cost2 < cost3){
+                    cout << "Package b is the cheapest." << endl;
+                }
+                else if (cost2 > cost1 && cost1 < cost3){
+                    cout << "Package a is the cheapest." << endl;
+                }
+                else{
+                    cout << "Package c is the cheapest." << endl;
+                }
+           }
+           else if (pack == 'b' || pack == 'B'){
+                    hrs = hrs - 5;
+                if (hrs > 20){
+                    hrsAft = hrs - 20;
+                    cost1 = 19.95 + .75 * 20 + 1 * hrsAft;
+                }
+                else if (hrs > 0){
+                    cost1 = 19.95 + .75 * hrs;
+                }
+                else{
+                    cost1 = 19.95;
+                }
+                hrs2 = hrs2 - 15;
+                if (hrs2 > 25){
+                    hrsAft = hrs2 - 25;
+                    cost2 = 24.95 + .75 * 25 + .5 * hrsAft;
+                }
+                else if (hrs > 0){
+                    cost2 = 24.95 + .75 * hrs2;
+                }
+                else{
+                    cost2 = 24.95;
+                }
+                cout << "The package cost is " << cost2 << endl;
+                cost3 = 29.75;
+                if (cost1 > cost2 && cost2 < cost3){
+                    cout << "Package b is the cheapest." << endl;
+                }
+                else if (cost2 > cost1 && cost1 < cost3){
+                    cout << "Package a is the cheapest." << endl;
+                }
+                else{
+                    cout << "Package c is the cheapest." << endl;
+                }
+           }
+           else if (pack == 'c' || pack == 'C'){
+                    hrs = hrs - 5;
+                if (hrs > 20){
+                    hrsAft = hrs - 20;
+                    cost1 = 19.95 + .75 * 20 + 1 * hrsAft;
+                }
+                else if (hrs > 0){
+                    cost1 = 19.95 + .75 * hrs;
+                }
+                else{
+                    cost1 = 19.95;
+                }
+                hrs2 = hrs2 - 15;
+                if (hrs2 > 25){
+                    hrsAft = hrs2 - 25;
+                    cost2 = 24.95 + .75 * 25 + .5 * hrsAft;
+                }
+                else if (hrs > 0){
+                    cost2 = 24.95 + .75 * hrs2;
+                }
+                else{
+                    cost2 = 24.95;
+                }
+                cost3 = 29.75;
+                cout << "The package cost is " << cost3 << endl;
+                if (cost1 > cost2 && cost2 < cost3){
+                    cout << "Package b is the cheapest." << endl;
+                }
+                else if (cost2 > cost1 && cost1 < cost3){
+                    cout << "Package a is the cheapest." << endl;
+                }
+                else{
+                    cout << "Package c is the cheapest." << endl;
+                }
+           }        
+    }
+
+    void prob5(){
+           cout << "Problem 5" << endl;
            
     }
-    void prob5()
-    {
-           cout << "Problem 5" << endl;
-    }
-    void prob6()
-    {
+    void prob6(){
            cout << "Problem 6" << endl;
     }
-    void def(int inN)
-    {
+    void def(int inN){
            cout << "You left the program. Good-Bye.";
     }
