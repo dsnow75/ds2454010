@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin_4.x-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin_4.x-Windows
-CND_ARTIFACT_NAME_Debug=mastermind
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/mastermind
+CND_ARTIFACT_NAME_Debug=mastermind__project_1_
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/mastermind__project_1_
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin_4.x-Windows/package
-CND_PACKAGE_NAME_Debug=mastermind.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/package/mastermind.tar
+CND_PACKAGE_NAME_Debug=mastermind(project1).tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/package/mastermind(project1).tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin_4.x-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin_4.x-Windows
-CND_ARTIFACT_NAME_Release=mastermind
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/mastermind
+CND_ARTIFACT_NAME_Release=mastermind__project_1_
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/mastermind__project_1_
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin_4.x-Windows/package
-CND_PACKAGE_NAME_Release=mastermind.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/mastermind.tar
+CND_PACKAGE_NAME_Release=mastermind(project1).tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/mastermind(project1).tar
 #
 # include compiler specific variables
 #
