@@ -41,10 +41,6 @@ int main(int argc, char** argv) {
         code2 = rand() % 4 + 1;
         code3 = rand() % 4 + 1;
         code4 = rand() % 4 + 1;
-        cout << code1 << " ";
-        cout << code2 << " ";
-        cout << code3 << " ";
-        cout << code4 << endl;
         while (guess <= 10){
             //input guesses for code
             cout << "Input the first number you guess:(1-4) ";
@@ -159,6 +155,11 @@ int main(int argc, char** argv) {
                 cout << "No guess is correct" << endl;
                 guess ++;
             }
+        }
+        if (guess == 11){
+            cout << "You lost!!" << endl;
+            cout << "Your score is " << Score << "." << endl;
+            cout << "Please try again." << endl;
         }
         cout << "Retry? Y/N ";
         cin >> redo;
