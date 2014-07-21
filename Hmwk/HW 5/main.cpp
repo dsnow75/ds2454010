@@ -39,8 +39,10 @@ int main(int argc, char** argv) {
       //Problems for homework
         switch(num){
             case 1:
-                cout << "Problem 1" << endl;
+                cout << "Problem 2" << endl;
                 //variables
+                int cTime; //current time
+                int wTime; //wait time
                 
                 break;
             case 2:
