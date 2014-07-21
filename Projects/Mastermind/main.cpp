@@ -182,11 +182,6 @@ int main(int argc, char** argv) {
             cout << "Your score is " << score << endl;
         }
         //Retry
-        if (guess == 11){
-            cout << "You lost!!" << endl;
-            cout << "Your score is " << score << "." << endl;
-            cout << "Please try again." << endl;
-        }
         cout << "Retry? Y/N ";
         cin >> redo;
         
