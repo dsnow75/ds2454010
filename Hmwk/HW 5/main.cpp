@@ -23,6 +23,9 @@ void comCoins(int cents);
 void inLe();
 void calCon(float inp);
 void outLe(float in1, float in2);
+void inWeight();
+void calWeight(float inp);
+void outWeight(float in1, float in2);
 //Execution Starts Here!
 int main(int argc, char** argv) {
     short num;
@@ -32,14 +35,14 @@ int main(int argc, char** argv) {
             cout << "Choose your problem you want to look at" << endl;
             cout << "1 for Problem 2" << endl;
             cout << "2 for Problem 3" << endl;
-            cout << "3 for Problem 4" << endl;
+            cout << "3 for Problem " << endl;
             cout << "4 for Problem 5" << endl;
-            cout << "5 for Problem 5" << endl;
+            cout << "5 for Problem 6" << endl;
             cout << "6 for Problem 7" << endl;
-            cout << "7 for Problem 9" << endl;
-            cout << "8 for Problem 10" << endl;
-            cout << "9 for Problem 15" << endl;
-            cout << "10 for Problem 8" << endl;
+            cout << "7 for Problem 8" << endl;
+            cout << "8 for Problem 9" << endl;
+            cout << "9 for Problem " << endl;
+            cout << "10 for Problem " << endl;
             cin >> num;
             cin.ignore();
         }while( num < 0 || num > 10);
@@ -174,16 +177,34 @@ int main(int argc, char** argv) {
                     cin >> Retry;
                 }while (Retry == 'Y' || Retry == 'y');
                 break;
-                break;
             case 7:
-                cout << "This is problem 9" << endl;
+                cout << "This is problem 8" << endl;
                 //variables
-
+                char Ret;// retry variable
+                do{
+                    int x; //variable to decide conversion
+                    cout << "Enter 1 for feet to meters or 2 for meters to feet: ";
+                    cin >> x;
+                    if (x == 1){
+                        inLen();
+                    }
+                    else if (x == 2){
+                        inLe();
+                    }
+                    else {
+                        cout << "You did not enter a valid response.";
+                    }
+                    cout << "Retry? Y/N ";
+                    cin >> Ret;
+                }while (Ret == 'Y' || Ret == 'y');
                 break;
             case 8:
-                cout << "This is problem 10" << endl;
+                cout << "This is problem 9" << endl;
                 //variables
-
+                char Redo; // retry variable
+                do{
+                    inWeight();
+                }while(Redo == 'Y' || Redo == 'y');
                 break;
             case 9:
                 cout << "This is problem 14" << endl;
@@ -252,5 +273,22 @@ void calCon(float inp){
 }
 void outLe(float in1, float in2){
     cout << "The converted length is " << in1 << " feet." << endl;
+    cout << "The converted length is " << in2 << " inches." << endl;
+}
+void inWeight(){
+    float weight; // length in meters and centimeters
+    cout << "Input the weight in lbs you want to convert: ";
+    cin >> weight;
+    calCon(weight);
+}
+void calWeight(float inp){
+    float cWeight = 0; //converted weight to kilograms
+    float gWeight = 0; //converted weight from kilograms to grams
+    cWeight = inp * 2.2046;
+    gWeight = cWeight * 1000;
+    outLe(cWeight, gWeight);
+}
+void outWeight(float in1, float in2){
+    cout << "The converted weight is " << in1 << " feet." << endl;
     cout << "The converted length is " << in2 << " inches." << endl;
 }
