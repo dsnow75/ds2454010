@@ -26,6 +26,10 @@ void outLe(float in1, float in2);
 void inWeight();
 void calWeight(float inp);
 void outWeight(float in1, float in2);
+void inWeigh();
+void calWeigh(float inp);
+void outWeigh(float in1, float in2);
+void tri();
 //Execution Starts Here!
 int main(int argc, char** argv) {
     short num;
@@ -35,14 +39,14 @@ int main(int argc, char** argv) {
             cout << "Choose your problem you want to look at" << endl;
             cout << "1 for Problem 2" << endl;
             cout << "2 for Problem 3" << endl;
-            cout << "3 for Problem " << endl;
+            cout << "3 for Problem 13" << endl;
             cout << "4 for Problem 5" << endl;
             cout << "5 for Problem 6" << endl;
             cout << "6 for Problem 7" << endl;
             cout << "7 for Problem 8" << endl;
             cout << "8 for Problem 9" << endl;
-            cout << "9 for Problem " << endl;
-            cout << "10 for Problem " << endl;
+            cout << "9 for Problem 10" << endl;
+            cout << "10 for Problem 11" << endl;
             cin >> num;
             cin.ignore();
         }while( num < 0 || num > 10);
@@ -144,18 +148,21 @@ int main(int argc, char** argv) {
                 }while (redos == 'Y'|| redos =='y');
                 break;
             case 3:
-                cout << "Problem 4" << endl;
-                //variables
-                
+                cout << "Problem 14" << endl;
+                tri();
                 break;
             case 4:
                 cout << "Problem 5" << endl;
                 //variables
                 int amount; //amount of coins
-                cout << "Enter the amount of coins between 1 and 99 to calculate: ";
-                cin >> amount;
-                comCoins(amount);
-                
+                char Retdo; //retry variable
+                do{
+                    cout << "Enter the amount of coins between 1 and 99 to calculate: ";
+                    cin >> amount;
+                    comCoins(amount);
+                    cout << "Retry? Y/N ";
+                    cin >> Retdo;
+                }while (Retdo == 'y' || Retdo == 'Y');    
                 break;
             case 5:
                 cout << "Problem 6" << endl;
@@ -204,16 +211,41 @@ int main(int argc, char** argv) {
                 char Redo; // retry variable
                 do{
                     inWeight();
+                    cout << "Retry? Y/N ";
+                    cin >> Redo;
                 }while(Redo == 'Y' || Redo == 'y');
                 break;
             case 9:
-                cout << "This is problem 14" << endl;
+                cout << "This is problem 10" << endl;
                 //variables
-
+                char ret; // retry variable
+                do{
+                    inWeigh();
+                    cout << "Retry? Y/N ";
+                    cin >> ret;
+                }while(ret == 'Y' || ret == 'y');
                 break;
             case 10:
-                cout << "This is problem 8" << endl;
+                cout << "This is problem 11" << endl;
                 //variables
+                char cConv; //choose conversion wanted to do
+                char RetDo; //retry variable
+                do{
+                    cout << "Input 1 to convert to lbs and 2 to convert to grams: ";
+                    cin >> cConv;
+                    if (cConv == '1'){
+                        inWeigh();
+                    }
+                    else if (cConv == '2'){
+                        inWeight();
+                    }
+                    else{
+                        cout << "You did not input a valid input. "
+                             << "Please input 1 or 2. " << endl;
+                    }
+                    cout << "Retry? Y/N ";
+                    cin >> RetDo;
+                }while (RetDo == 'y' || RetDo == 'Y');
                 break;
             }
     }while(num);
@@ -224,11 +256,11 @@ void comCoins(int cents){
     int pen = 0; //number of pennies
     int quart = 0; //number of quarters
     int dimes = 0; // number of dimes       
-    while (cents > 25){
+    while (cents >= 25){
             cents = cents - 25;
             quart = quart + 1;
     }
-    while (cents > 10){
+    while (cents >= 10){
             cents = cents - 10;
             dimes = dimes + 1;
     }
@@ -279,16 +311,60 @@ void inWeight(){
     float weight; // length in meters and centimeters
     cout << "Input the weight in lbs you want to convert: ";
     cin >> weight;
-    calCon(weight);
+    calWeight(weight);
 }
 void calWeight(float inp){
     float cWeight = 0; //converted weight to kilograms
     float gWeight = 0; //converted weight from kilograms to grams
-    cWeight = inp * 2.2046;
+    cWeight = inp / 2.2046;
     gWeight = cWeight * 1000;
-    outLe(cWeight, gWeight);
+    outWeight(cWeight, gWeight);
 }
 void outWeight(float in1, float in2){
-    cout << "The converted weight is " << in1 << " feet." << endl;
-    cout << "The converted length is " << in2 << " inches." << endl;
+    cout << "The converted weight is " << in1 << " kilograms." << endl;
+    cout << "The converted length is " << in2 << " grams." << endl;
+}
+void inWeigh(){
+    float gWeight; // length in meters and centimeters
+    cout << "Input the weight in grams you want to convert: ";
+    cin >> gWeight;
+    calWeigh(gWeight);
+}
+void calWeigh(float inp){
+    float cWeight = 0; //converted weight to kilograms
+    float gWeight = 0; //converted weight from kilograms to grams
+    cWeight = inp * 2.2046;
+    gWeight = cWeight * 16;
+    outWeigh(cWeight, gWeight);
+}
+void outWeigh(float in1, float in2){
+    cout << "The converted weight is " << in1 << " lbs." << endl;
+    cout << "The converted length is " << in2 << " ounces." << endl;
+}
+void tri(){
+    float a, b, c; //sides of triangle
+    float s; //semi-perimeter and will be converted later to perimeter
+    float Area; //area of the triangle
+    cout << "Input the lengths of the sides of the triangle: ";
+    cin >> a >> b >> c;
+    if ((a + b) > c && (a + c) > b && (c + b) > a){
+        s = (a + b + c)/2;
+        Area = sqrt(s*(s-a)*(s-b)*(s-c));
+        s = 2 * s;
+        cout << "The area of the triangle is " << Area << "." << endl;
+        cout << "The perimeter of the triangle is " << s << "." << endl;
+    }
+    else{
+        cout << "You did not enter a valid triangle configuration." << endl;
+        s = (a + b + c)/2;
+        if (s*(s-a)*(s-b)*(s-c) < 0){
+            cout << "The area cannot be calculated." << endl;
+        }
+        else{
+            Area = sqrt(s*(s-a)*(s-b)*(s-c));
+            cout << "The area of the lengths is " << Area << "." << endl;
+        }  
+        s = 2 * s;
+        cout << "The perimeter of the lengths is " << s << "." << endl;
+    }
 }
