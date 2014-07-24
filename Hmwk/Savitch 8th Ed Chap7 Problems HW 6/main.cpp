@@ -42,7 +42,7 @@ int main(int argc, char** argv) {
             case 1:
                 cout << "Problem 2" << endl;
                 //variables
-                
+
                 break;
             case 2:
                 cout << "Problem 3" << endl;
