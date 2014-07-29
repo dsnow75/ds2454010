@@ -11,6 +11,8 @@
 #include <ctime>
 #include <iomanip>
 #include <cmath>
+#include <vector>
+#include <cctype>
 using namespace std;
 
 //Global Constants
@@ -25,7 +27,7 @@ void prob3();
 void prob4();
 void prob5();
 void prob6();
-
+int rev(unsigned short n);
 //Execution begins here
 int main(int argv,char *argc[]){
     int inN;
@@ -66,19 +68,51 @@ int getN(){
 void prob1(){
     cout << "In problem 1" << endl << endl;
     //variables
-    
+    unsigned short num; //number to be inputed
+    cout << "Input the number you want to reverse: ";
+    cin >> num;
+    rev(num);
 }
 
 void prob2(){
     cout << "In problem 2" << endl << endl;
+    //variables
+    int guess = 0; // guess variable
+    int n = 1; //number of guesses
+    int num; //number trying to guess
+    char redo;
+    do{srand(time(NULL));
+       num = rand() % 1000 + 1;
+       while (n <= 10){
+          cout << "Guess the number: ";
+          cin >> guess;
+          if (guess == num){
+              cout << "Congratulations, You guessed the number!";
+              cout << "Retry? Y/N";
+              cin >> redo;
+              break;
+          }
+          else if (guess < num){
+              cout << "Too low" << endl;
+          }
+          else if (guess > num){
+              cout << "Too high" << endl;
+          }
+       }
+       if (n > 10){
+           cout << "Too many guesses";
+       }
+    }while (redo == 'Y' || redo == 'y');
 }
 
 void prob3(){
     cout << "In problem 3" << endl << endl;
+    
 }
 
 void prob4(){
     cout << "In problem 4" << endl << endl;
+    
 }
 
 
@@ -94,4 +128,42 @@ void prob6(){
 //Exit Comment
 void def(int inN){
     cout<<"You typed "<<inN<<" to exit the program"<<endl;
+}
+int rev(unsigned short n){
+    int i = 10; //iteration variable
+    int x, y, z , v, c; // check variables
+    x = (n % i)/ (i/10);
+    i *= 10;
+    y = (n % i)/ (i/10);
+    i *= 10;
+    z = (n % i)/ (i/10);
+    i *= 10;
+    v = (n % i)/ (i/10);
+    i *= 10;
+    c = (n % i)/ (i/10);
+    i *= 10;
+    if (x > 3 && isdigit(c)){
+        cout << "invalid input" << endl;
+    } 
+    else if(x ==3 && y > 2 && isdigit(c)){
+        cout << "invalid input" << endl;
+    }
+    else if (x ==3 && y == 2 && z > 7 && isdigit(c)){
+        cout << "invalid input" << endl;
+    }
+    else if(x ==3 && y == 2 && z == 7 && v > 6 && isdigit(c)){
+        cout << "invalid input" << endl;
+    }
+    
+    else if(x ==3 && y == 2 && z == 7 && v == 6 && c > 7){
+        cout << "invalid input" << endl;
+    }
+    else{
+        i = 10;
+        do{ 
+           cout << (n % i)/ (i/10);
+           i *= 10;
+        }while ((n * 10)/i != 0);
+    }
+     cout << endl;
 }

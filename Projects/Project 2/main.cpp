@@ -15,7 +15,7 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-
+void wPlace(int n, int x, int y, int z, int q, int w, int);
 //Execution Starts Here!
 int main(int argc, char** argv) {
     //variables
@@ -55,6 +55,7 @@ int main(int argc, char** argv) {
             cin >> guess3;
             cout << "Input the fourth number you guess:(1-4) ";
             cin >> guess4;
+            wPlace(guess1, guess2, guess3, guess4);
             //determining how many are correct and score they receive
             if (guess1 == code1 && guess2 == code2 && guess3 == code3
                     && guess4 == code4){
@@ -187,4 +188,7 @@ int main(int argc, char** argv) {
         
     }while (redo == 'y' || redo == 'Y');
     return 0;
+}
+void wPlace(int n, int i, int x, int y){
+    if (n == )
 }
