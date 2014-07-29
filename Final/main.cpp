@@ -28,6 +28,7 @@ void prob4();
 void prob5();
 void prob6();
 int rev(unsigned short n);
+void retrand(short int x[], int y[], int z,int p);
 //Execution begins here
 int main(int argv,char *argc[]){
     int inN;
@@ -112,17 +113,22 @@ void prob3(){
 
 void prob4(){
     cout << "In problem 4" << endl << endl;
-    
+    const int n=5,ntimes=10000;
+    int freq[n]={0};
+    short int rndseq[]={9,51,78,111,121};
+    retrand(rndseq,freq,n,ntimes);
 }
 
 
 void prob5(){
     cout << "In problem 5" << endl << endl;
+    
 }
 
 
 void prob6(){
     cout << "In problem 6" << endl << endl;
+    
 }
 
 //Exit Comment
@@ -166,4 +172,19 @@ int rev(unsigned short n){
         }while ((n * 10)/i != 0);
     }
      cout << endl;
+}
+void retrand(short int x[], int y[], int z,int p){
+    int a;
+    srand(time(NULL));
+    while (p > 0){
+        a = rand() % z;
+        x[a];
+        y[a] = y[a] + 1;
+        p--;
+    }
+    for (int i = 0; i < z; i++){
+        cout<<x[i]<<" occurred "<<
+        y[i]<<" times"<<endl;
+    }
+    
 }
