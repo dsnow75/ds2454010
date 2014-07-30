@@ -29,6 +29,8 @@ void prob5();
 void prob6();
 int rev(unsigned short n);
 void retrand(short int x[], int y[], int z,int p);
+void filVec(vector<int> &, const vector<int> &b, int);
+void prntVec(const vector<int> &, const vector<int> &b, int);
 //Execution begins here
 int main(int argv,char *argc[]){
     int inN;
@@ -108,7 +110,14 @@ void prob2(){
 
 void prob3(){
     cout << "In problem 3" << endl << endl;
-    
+    int mxSize;
+    vector <int> vec1(mxSize);
+    vector <int> vec2(mxSize);
+    int nCol; //number of columns
+    cout << "Input the number of integers you want in the data: ";
+    cin >> mxSize;
+    filVec(vec1, vec2, mxSize);
+    prntVec(vec1, vec2, mxSize);
 }
 
 void prob4(){
@@ -119,12 +128,10 @@ void prob4(){
     retrand(rndseq,freq,n,ntimes);
 }
 
-
 void prob5(){
     cout << "In problem 5" << endl << endl;
     
 }
-
 
 void prob6(){
     cout << "In problem 6" << endl << endl;
@@ -185,6 +192,19 @@ void retrand(short int x[], int y[], int z,int p){
     for (int i = 0; i < z; i++){
         cout<<x[i]<<" occurred "<<
         y[i]<<" times"<<endl;
+    }    
+}
+void filVec(vector<int> &a, const vector<int> &b,int n){
+    for(int i=0;i<n;i++){
+        a[i] = (rand()%90+10);
+        b[i]
     }
-    
+}
+void prntVec(const vector<int> &a, const vector<int> &b, int Num){
+    cout<<endl;
+    for(int i=0; i < Num ;i++){
+        cout << a[i] << " ";
+        cout << endl;
+    }
+    cout << endl;
 }

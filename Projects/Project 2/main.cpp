@@ -15,7 +15,7 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-void wPlace(int n, int x, int y, int z, int q, int w, int e, int r, float s);
+void wPlace(int n, int x, int y, int z, int q, int w, int e, int r, float &s);
 //Execution Starts Here!
 int main(int argc, char** argv) {
     //variables
@@ -31,6 +31,8 @@ int main(int argc, char** argv) {
     int guess2;
     int guess3;
     int guess4;
+    //array
+    int numCor[0];
     //file variable
     ifstream output;
     //retry variable
@@ -58,6 +60,7 @@ int main(int argc, char** argv) {
             //determining how many are correct and score they receive
             if (guess1 == code1 && guess2 == code2 && guess3 == code3
                     && guess4 == code4){
+                numCor[0] += 4;
                 cout << code1 << " ";
                 cout << code2 << " ";
                 cout << code3 << " ";
@@ -68,7 +71,9 @@ int main(int argc, char** argv) {
                     score = score + 50.0;
                 }
                 cout << "Your score is " << score << endl;
-                output.open ("Score.txt");
+                cout << numCor[0] << " is the total amount of correct guesses "
+                        "during the game." << endl;
+                output.open ("Score.dat");
                 if (output.is_open()){
                     output >> score;
                     output.close ();
@@ -94,77 +99,92 @@ int main(int argc, char** argv) {
                 break;
             }
             else if (guess2 == code2 && guess3 == code3 && guess4 == code4){
+                numCor[0] += 3;
                 cout << "Three guesses are correct " << endl;
                 score = score + 30.0;
                 guess ++;
             }
             else if (guess1 == code1 && guess3 == code3 && guess4 == code4){
+                numCor[0] += 3;
                 cout << "Three guesses are correct " << endl;
                 score = score + 30.0;
                 guess ++;
             }
             else if (guess1 == code1 && guess2 == code2 && guess4 == code4){
+                numCor[0] += 3;
                 cout << "Three guesses are correct " << endl;
                 score = score + 30.0;
                 guess ++;
             }
             else if (guess1 == code1 && guess2 == code2 && guess3 == code3){
+                numCor[0] += 3;
                 cout << "Three guesses are correct " << endl;
                 score = score + 30.0;
                 guess ++;
             }
             else if (guess3 == code3 && guess4 == code4){
+                numCor[0] += 2;
                 cout << "Two guesses are correct " << endl;
                 score = score + 20.0;
                 guess ++;
             }
 
             else if (guess3 == code3 && guess4 == code4){
+                numCor[0] += 2;
                 cout << "Two guesses are correct " << endl;
                 score = score + 20.0;
                 guess ++;
             }
             else if (guess2 == code2 && guess4 == code4){
+                numCor[0] += 2;
                 cout << "Two guesses are correct " << endl;
                 score = score + 20.0;
                 guess ++;
             }
             else if (guess2 == code2 && guess3 == code3){
+                numCor[0] += 2;
                 cout << "Two guesses are correct " << endl;
                 score = score + 20.0;
                 guess ++;
             }
             else if (guess1 == code1 && guess4 == code4){
+                numCor[0] += 2;
                 cout << "Two guesses are correct " << endl;
                 score = score + 20.0;
                 guess ++;
             }
             else if (guess1 == code1 && guess3 == code3){
+                numCor[0] += 2;
                 cout << "Two guesses are correct " << endl;
                 score = score + 20.0;
                 guess ++;
             }
             else if (guess1 == code1 && guess2 == code2){
+                numCor[0] += 2;
                 cout << "Two guesses are correct " << endl;
                 score = score + 20.0;
                 guess ++;
             }
             else if (guess4 == code4){
+                numCor[0] += 1;
                 cout << "One guess is correct " << endl;
                 score = score + 10.0;
                 guess ++;
             }
             else if (guess3 == code3){
+                numCor[0] += 1;
                 cout << "One guess is correct " << endl;
                 score = score + 10.0;
                 guess ++;
             }
             else if (guess2 == code2){
+                numCor[0] += 1;
                 cout << "One guess is correct " << endl;
                 score = score + 10.0;
                 guess ++;
             }
             else if (guess1 == code1){
+                numCor[0] += 1;
                 cout << "One guess is correct " << endl;
                 score = score + 10.0;
                 guess ++;
@@ -194,7 +214,7 @@ int main(int argc, char** argv) {
     }while (redo == 'y' || redo == 'Y');
     return 0;
 }
-void wPlace(int n, int i, int x, int y, int q, int w, int e, int r, float s){
+void wPlace(int n, int i, int x, int y, int q, int w, int e, int r, float &s){
     if (n != q && i != w && x != e && y != r 
             && (n == w || n == e || n == r)
             && (i == q || i == e || i == r) 
