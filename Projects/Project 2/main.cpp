@@ -55,8 +55,6 @@ int main(int argc, char** argv) {
             cin >> guess3;
             cout << "Input the fourth number you guess:(1-4) ";
             cin >> guess4;
-            wPlace(guess1, guess2, guess3, guess4, 
-                    code1, code2, code3, code4, score);
             //determining how many are correct and score they receive
             if (guess1 == code1 && guess2 == code2 && guess3 == code3
                     && guess4 == code4){
@@ -175,9 +173,15 @@ int main(int argc, char** argv) {
                 cout << "No guess is correct" << endl;
                 guess ++;
             }
+            wPlace(guess1, guess2, guess3, guess4, 
+                    code1, code2, code3, code4, score);
         }
         //determining if you lose
         if (guess == 11){
+            cout << code1 << " ";
+            cout << code2 << " ";
+            cout << code3 << " ";
+            cout << code4 << endl;
             cout << "You lose!!!" << endl;
             cout << "Number of guesses was 10." << endl;
             cout << "Better luck next time." << endl;
@@ -191,24 +195,96 @@ int main(int argc, char** argv) {
     return 0;
 }
 void wPlace(int n, int i, int x, int y, int q, int w, int e, int r, float s){
-    if (n != q && 
+    if (n != q && i != w && x != e && y != r 
+            && (n == w || n == e || n == r)
+            && (i == q || i == e || i == r) 
+            && (x == w || x == q || x == r)
+            && (y == w || y == e || y == q)){
+        cout << "You got all four in the wrong place. " << endl;
+        s = s + 20.0;
+    }
+    else if(n != q && i != w && x != e
+            && (n == w || n == e || n == r)
+            && (i == q || i == e || i == r) 
+            && (x == w || x == q || x == r)){
+        cout << "You got three in the wrong place. " << endl;
+        s = s + 15.0;
+    }
+    else if(n != q && i != w && y != r
+            && (n == w || n == e || n == r)
+            && (i == q || i == e || i == r) 
+            && (y == w || y == q || y == e)){
+        cout << "You got three in the wrong place. " << endl;
+        s = s + 15.0;
+    }
+    else if(n != q && y != r && x != e
+            && (n == w || n == e || n == r)
+            && (y == q || y == e || y == w) 
+            && (x == w || x == q || x == r)){
+        cout << "You got three in the wrong place. " << endl;
+        s = s + 15.0;
+    }
+    else if(y != r && i != w && x != e
+            && (y == w || y == e || y == q)
+            && (i == q || i == e || i == r) 
+            && (x == w || x == q || x == r)){
+        cout << "You got three in the wrong place. " << endl;
+        s = s + 15.0;
+    }
+    else if(y != r && x != e
+            && (y == w || y == e || y == q)
+            && (x == q || x == w || x == r)){
+        cout << "You got two in the wrong place. " << endl;
+        s = s + 10.0;
+    }
+    else if(y != r && i != w
+            && (y == w || y == e || y == q)
+            && (i == q || i == e || i == r)){
+        cout << "You got two in the wrong place. " << endl;
+        s = s + 10.0;
+    }
+    else if(y != r && n != q
+            && (y == w || y == e || y == q)
+            && (n == w || n == e || n == r)){
+        cout << "You got two in the wrong place. " << endl;
+        s = s + 10.0;
+    }
+    else if(x != e && i != w
+            && (x == w || x == r || x == q)
+            && (i == q || i == e || i == r)){
+        cout << "You got two in the wrong place. " << endl;
+        s = s + 10.0;
+    }
+    else if(x != e && n != q
+            && (x == w || x == r || x == q)
+            && (n == w || n == e || n == r)){
+        cout << "You got two in the wrong place. " << endl;
+        s = s + 10.0;
+    }
+    else if(i != w && n != q
+            && (i == e || x == r || x == q)
+            && (n == w || n == e || n == r)){
+        cout << "You got two in the wrong place. " << endl;
+        s = s + 10.0;
+    }
+    else if (n != q && 
        (n == w || n == e || n == r)){
-        cout << "You have a guess in the wrong place. ";
+        cout << "You have one guess in the wrong place. " << endl;
         s = s + 5.0;
     }
     else if (i != w && 
        (i == q || i == e || i == r)){
-        cout << "You have a guess in the wrong place. ";
+        cout << "You have one guess in the wrong place. " << endl;
         s = s + 5.0;
     }
     else if (x != e && 
-       (x == w || x == q || n == r)){
-        cout << "You have a guess in the wrong place. ";
+       (x == w || x == q || x == r)){
+        cout << "You have one guess in the wrong place. " << endl;
         s = s + 5.0;
     }
     else if (y != r && 
        (y == w || y == e || y == q)){
-        cout << "You have a guess in the wrong place. ";
+        cout << "You have one guess in the wrong place. " << endl;
         s = s + 5.0;
     }
 }
