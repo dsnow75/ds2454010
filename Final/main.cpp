@@ -13,6 +13,8 @@
 #include <cmath>
 #include <vector>
 #include <cctype>
+#include <fstream>
+#include <cstring>
 using namespace std;
 
 //Global Constants
@@ -29,8 +31,10 @@ void prob5();
 void prob6();
 int rev(unsigned short n);
 void retrand(short int x[], int y[], int z,int p);
-void filVec(vector<int> &, const vector<int> &b, int);
-void prntVec(const vector<int> &, const vector<int> &b, int);
+void filVec(vector<int> &, vector<int> &b, int);
+void prntVec(const vector<int> &, const vector<int> &b, int, int);
+void prntArr(char y[][15]);
+void sortArr(char y[][15]);
 //Execution begins here
 int main(int argv,char *argc[]){
     int inN;
@@ -111,13 +115,36 @@ void prob2(){
 void prob3(){
     cout << "In problem 3" << endl << endl;
     int mxSize;
-    vector <int> vec1(mxSize);
-    vector <int> vec2(mxSize);
     int nCol; //number of columns
     cout << "Input the number of integers you want in the data: ";
     cin >> mxSize;
+    cout << "Input the number of columns you want in the data: ";
+    cin >> nCol;
+    srand(time(NULL));
+    vector <int> vec1(mxSize,0);
+    vector <int> vec2(mxSize,0);
     filVec(vec1, vec2, mxSize);
-    prntVec(vec1, vec2, mxSize);
+    prntVec(vec1, vec2, mxSize, nCol);
+    int Arr[mxSize][2];
+    cout << "Array" << endl;
+    for(int i = 0; i < mxSize; i++){
+        for(int w = 0; w < 2; w++){
+            if (Arr[i][w] == Arr[i][0]){
+                Arr[i][w] = (rand() % 45) * 2 + 10;
+            }
+            else{
+                Arr[i][w] = (rand() % 45) * 2 + 11;
+            }
+        }
+    }
+    for(int i = 0; i < mxSize; i++){
+        cout << endl;
+        for(int w = 0; w < 2; w++){
+            cout << Arr[i][w] << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
 }
 
 void prob4(){
@@ -129,8 +156,21 @@ void prob4(){
 }
 
 void prob5(){
-    cout << "In problem 5" << endl << endl;
-    
+    cout << "In problem 5" << endl;
+    char Arr[10][15];
+    ifstream Input;
+    Input.open("input.dat");
+    for(int i = 0; i < 10; i++){
+        for(int x = 0; x < 15; x++){
+            Input >> Arr[i][x];
+        }
+    }
+    Input.close();
+    prntArr(Arr);
+    sortArr(Arr);
+    cout << endl;
+    prntArr(Arr);
+    cout << endl;
 }
 
 void prob6(){
@@ -194,17 +234,50 @@ void retrand(short int x[], int y[], int z,int p){
         y[i]<<" times"<<endl;
     }    
 }
-void filVec(vector<int> &a, const vector<int> &b,int n){
+void filVec(vector<int> &a, vector<int> &b,int n){
+    int Even;
+    int Odd;
     for(int i=0;i<n;i++){
-        a[i] = (rand()%90+10);
-        b[i]
+        Even = (rand()%45 * 2 + 10);
+        Odd = (rand()%45 * 2 + 11);
+        a[i] = Even;
+        b[i] = Odd;
     }
 }
-void prntVec(const vector<int> &a, const vector<int> &b, int Num){
+void prntVec(const vector<int> &a, const vector<int> &b, int Num, int n){
     cout<<endl;
+    cout <<"Even Vector" << endl;
     for(int i=0; i < Num ;i++){
         cout << a[i] << " ";
-        cout << endl;
+        if (i % n == (n -1)){
+            cout << endl;
+        }
+    }
+    cout << "Odd Vector" << endl;
+    for(int i=0; i < Num ;i++){
+        cout << b[i] << " ";
+        if (i % n == (n - 1)){
+            cout << endl;
+        }
     }
     cout << endl;
+}
+void prntArr(char y[][15]){
+    for(int i = 0; i < 10; i++){
+        cout << endl;
+        for(int x = 0; x < 15; x++){
+            cout << y[i][x];
+        }
+    }
+}
+void sortArr(char y[][15]){
+    for (int i=0 ; i< 10 ; ++i) {
+		for (int j = 0 ; j < 10 ; ++j) {
+			if (y[i][0] > y[j][0]) {
+                            for (int k = 0; k < 15; k++){
+                                swap(y[i][k], y[j][k]);
+                            }
+			}
+                }
+    }
 }
