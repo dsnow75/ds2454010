@@ -15,7 +15,7 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-void wPlace(int n, int x, int y, int z, int q, int w, int);
+void wPlace(int n, int x, int y, int z, int q, int w, int e, int r, float s);
 //Execution Starts Here!
 int main(int argc, char** argv) {
     //variables
@@ -55,7 +55,8 @@ int main(int argc, char** argv) {
             cin >> guess3;
             cout << "Input the fourth number you guess:(1-4) ";
             cin >> guess4;
-            wPlace(guess1, guess2, guess3, guess4);
+            wPlace(guess1, guess2, guess3, guess4, 
+                    code1, code2, code3, code4, score);
             //determining how many are correct and score they receive
             if (guess1 == code1 && guess2 == code2 && guess3 == code3
                     && guess4 == code4){
@@ -189,6 +190,25 @@ int main(int argc, char** argv) {
     }while (redo == 'y' || redo == 'Y');
     return 0;
 }
-void wPlace(int n, int i, int x, int y){
-    if (n == )
+void wPlace(int n, int i, int x, int y, int q, int w, int e, int r, float s){
+    if (n != q && 
+       (n == w || n == e || n == r)){
+        cout << "You have a guess in the wrong place. ";
+        s = s + 5.0;
+    }
+    else if (i != w && 
+       (i == q || i == e || i == r)){
+        cout << "You have a guess in the wrong place. ";
+        s = s + 5.0;
+    }
+    else if (x != e && 
+       (x == w || x == q || n == r)){
+        cout << "You have a guess in the wrong place. ";
+        s = s + 5.0;
+    }
+    else if (y != r && 
+       (y == w || y == e || y == q)){
+        cout << "You have a guess in the wrong place. ";
+        s = s + 5.0;
+    }
 }
