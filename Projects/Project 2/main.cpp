@@ -201,7 +201,6 @@ int main(int argc, char** argv) {
             }
             wPlace(guess1, guess2, guess3, guess4, 
                     code1, code2, code3, code4, score);
-            cout << guess4 << endl;
         }
         //determining if you lose
         if (guess == 11){
