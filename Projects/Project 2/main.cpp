@@ -15,7 +15,7 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-void wPlace(int n, int x, int y, int z, int q, int w, int e, int r, float &s);
+void wPlace(int n, int i, int x, int y, int q, int w, int e, int r, float &s);
 //Execution Starts Here!
 int main(int argc, char** argv) {
     //variables
@@ -32,7 +32,7 @@ int main(int argc, char** argv) {
     int guess3;
     int guess4;
     //array
-    int numCor[0];
+    int numCor[1] = {0};
     //file variable
     ifstream output;
     //retry variable
@@ -61,6 +61,10 @@ int main(int argc, char** argv) {
             if (guess1 == code1 && guess2 == code2 && guess3 == code3
                     && guess4 == code4){
                 numCor[0] += 4;
+                cout << guess4 << code4 <<endl;
+                cout << guess3 << code3 <<endl;
+                cout << guess2 << code2 <<endl;
+                cout << guess1 << code1 <<endl;
                 cout << code1 << " ";
                 cout << code2 << " ";
                 cout << code3 << " ";
@@ -70,9 +74,11 @@ int main(int argc, char** argv) {
                 for(int i  = 10; i >= guess; i--){
                     score = score + 50.0;
                 }
+                
                 cout << "Your score is " << score << endl;
                 cout << numCor[0] << " is the total amount of correct guesses "
                         "during the game." << endl;
+                //writing to the file
                 output.open ("Score.dat");
                 if (output.is_open()){
                     output >> score;
@@ -195,6 +201,7 @@ int main(int argc, char** argv) {
             }
             wPlace(guess1, guess2, guess3, guess4, 
                     code1, code2, code3, code4, score);
+            cout << guess4 << endl;
         }
         //determining if you lose
         if (guess == 11){
@@ -214,97 +221,39 @@ int main(int argc, char** argv) {
     }while (redo == 'y' || redo == 'Y');
     return 0;
 }
+//wrong place function
 void wPlace(int n, int i, int x, int y, int q, int w, int e, int r, float &s){
-    if (n != q && i != w && x != e && y != r 
-            && (n == w || n == e || n == r)
-            && (i == q || i == e || i == r) 
-            && (x == w || x == q || x == r)
-            && (y == w || y == e || y == q)){
-        cout << "You got all four in the wrong place. " << endl;
-        s = s + 20.0;
-    }
-    else if(n != q && i != w && x != e
-            && (n == w || n == e || n == r)
-            && (i == q || i == e || i == r) 
-            && (x == w || x == q || x == r)){
-        cout << "You got three in the wrong place. " << endl;
-        s = s + 15.0;
-    }
-    else if(n != q && i != w && y != r
-            && (n == w || n == e || n == r)
-            && (i == q || i == e || i == r) 
-            && (y == w || y == q || y == e)){
-        cout << "You got three in the wrong place. " << endl;
-        s = s + 15.0;
-    }
-    else if(n != q && y != r && x != e
-            && (n == w || n == e || n == r)
-            && (y == q || y == e || y == w) 
-            && (x == w || x == q || x == r)){
-        cout << "You got three in the wrong place. " << endl;
-        s = s + 15.0;
-    }
-    else if(y != r && i != w && x != e
-            && (y == w || y == e || y == q)
-            && (i == q || i == e || i == r) 
-            && (x == w || x == q || x == r)){
-        cout << "You got three in the wrong place. " << endl;
-        s = s + 15.0;
-    }
-    else if(y != r && x != e
-            && (y == w || y == e || y == q)
-            && (x == q || x == w || x == r)){
-        cout << "You got two in the wrong place. " << endl;
-        s = s + 10.0;
-    }
-    else if(y != r && i != w
-            && (y == w || y == e || y == q)
-            && (i == q || i == e || i == r)){
-        cout << "You got two in the wrong place. " << endl;
-        s = s + 10.0;
-    }
-    else if(y != r && n != q
-            && (y == w || y == e || y == q)
-            && (n == w || n == e || n == r)){
-        cout << "You got two in the wrong place. " << endl;
-        s = s + 10.0;
-    }
-    else if(x != e && i != w
-            && (x == w || x == r || x == q)
-            && (i == q || i == e || i == r)){
-        cout << "You got two in the wrong place. " << endl;
-        s = s + 10.0;
-    }
-    else if(x != e && n != q
-            && (x == w || x == r || x == q)
-            && (n == w || n == e || n == r)){
-        cout << "You got two in the wrong place. " << endl;
-        s = s + 10.0;
-    }
-    else if(i != w && n != q
-            && (i == e || x == r || x == q)
-            && (n == w || n == e || n == r)){
-        cout << "You got two in the wrong place. " << endl;
-        s = s + 10.0;
-    }
-    else if (n != q && 
-       (n == w || n == e || n == r)){
-        cout << "You have one guess in the wrong place. " << endl;
+    int wPlace = 0; //check if in the wrong place counter
+    //check if guess is in wrong place
+    if(y != r &&
+      (r == x 
+      || r == i 
+      || r == n)){
+        wPlace += 1;
         s = s + 5.0;
     }
-    else if (i != w && 
-       (i == q || i == e || i == r)){
-        cout << "You have one guess in the wrong place. " << endl;
+    if(n != q &&
+      (q == i 
+      || q == x 
+      || q == y)){
+        wPlace += 1;
         s = s + 5.0;
     }
-    else if (x != e && 
-       (x == w || x == q || x == r)){
-        cout << "You have one guess in the wrong place. " << endl;
+    if (i != w &&
+       (w == n
+       || w == x 
+       || w == y)){
+        wPlace += 1;
         s = s + 5.0;
     }
-    else if (y != r && 
-       (y == w || y == e || y == q)){
-        cout << "You have one guess in the wrong place. " << endl;
+    if(x != e &&
+      (e == n 
+      || e == i 
+      || e == y)){
+        wPlace += 1;
         s = s + 5.0;
     }
+    //output
+    cout << "You have " << wPlace <<
+            " guesses in the wrong spot." << endl;   
 }
