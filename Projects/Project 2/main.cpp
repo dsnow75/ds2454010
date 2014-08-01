@@ -8,6 +8,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <fstream>
+#include <iomanip>
 using namespace std;
 
 //User Libraries
@@ -57,14 +58,11 @@ int main(int argc, char** argv) {
             cin >> guess3;
             cout << "Input the fourth number you guess:(1-4) ";
             cin >> guess4;
+            
             //determining how many are correct and score they receive
             if (guess1 == code1 && guess2 == code2 && guess3 == code3
                     && guess4 == code4){
                 numCor[0] += 4;
-                cout << guess4 << code4 <<endl;
-                cout << guess3 << code3 <<endl;
-                cout << guess2 << code2 <<endl;
-                cout << guess1 << code1 <<endl;
                 cout << code1 << " ";
                 cout << code2 << " ";
                 cout << code3 << " ";
